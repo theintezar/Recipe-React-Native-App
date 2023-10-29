@@ -5,8 +5,9 @@ import { CartContext } from '../Context/CartContext';
 const CartScreen = () => {
   const { cartState, dispatch } = useContext(CartContext);
 
+
   return (
-    <View>
+    <View className='p-5'>
       {cartState.items.map((item) => (
         <View key={item.id}>
           <Text>{item.name}</Text>

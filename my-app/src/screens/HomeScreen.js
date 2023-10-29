@@ -1,15 +1,17 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { secondaryColor } from "../../color.config";
 import { ShoppingBagIcon } from "react-native-heroicons/solid";
 import Categories from "../Components/Categories";
 import Racipes from "../Components/Racipes";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
+import { CartContext } from "../Context/CartContext";
 
 const HomeScreen = () => {
   const [activeCategory, setActiveCategory] = useState("Starter");
   const navigation = useNavigation();
+  const { cartState } = useContext(CartContext);
 
   return (
     <SafeAreaView
@@ -32,7 +34,7 @@ const HomeScreen = () => {
         <ShoppingBagIcon size={40} color="black" />
         </TouchableOpacity>
         <Text className="absolute top-0 right-0 bg-red-700 rounded-full text-xs font-bold w-4 text-center">
-          0
+          {cartState?cartState.items.length:0}
         </Text>
       </View>
 
