@@ -1,54 +1,65 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { secondaryColor } from "../../color.config";
 import { ShoppingBagIcon } from "react-native-heroicons/solid";
 import Categories from "../Components/Categories";
+import Racipes from "../Components/Racipes";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
+  const [activeCategory, setActiveCategory] = useState("Starter");
+  const navigation = useNavigation();
 
-  const [activeCategory, setActiveCategory] = useState('Starter')
-  
   return (
-    <View
+    <SafeAreaView
       className="flex-1 bg-slate-300"
-      style={{ backgroundColor: secondaryColor }}
+      style={{ backgroundColor: secondaryColor, paddingBottom: 350 }}
     >
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 50 }}
-        className="space-y-6 pt-14"
-      >
-        {/* Header and its contain  avatar and kart*/}
-        <View className="mx-3 flex-row justify-between items-center mb-1">
-          <Image
-            source={require("../../assets/Images/Cassandre.webp")}
-            style={{
-              width: 40,
-              height: 40,
-              borderWidth: 2,
-              borderColor: "black",
-              borderRadius: 50,
-            }}
-          />
-          <ShoppingBagIcon size={40} color="black" />
-          <Text className="absolute top-0 right-0 bg-red-700 rounded-full text-xs font-bold w-4 text-center">
-            0
-          </Text>
-        </View>
+      {/* Header and its contain  avatar and kart*/}
+      <View className="mx-3 flex-row justify-between items-center mb-1">
+        <Image
+          source={require("../../assets/Images/Cassandre.webp")}
+          style={{
+            width: 40,
+            height: 40,
+            borderWidth: 2,
+            borderColor: "black",
+            borderRadius: 50,
+          }}
+        />
+        <TouchableOpacity onPress={()=>{navigation.navigate('Cart')}}>
+        <ShoppingBagIcon size={40} color="black" />
+        </TouchableOpacity>
+        <Text className="absolute top-0 right-0 bg-red-700 rounded-full text-xs font-bold w-4 text-center">
+          0
+        </Text>
+      </View>
 
-        {/* Person Name with some greetings */}
-        <View className='mx-4 spce-y-2 mb-2'>
-          <Text className='text-lg font-bold text-gray-700'>Hello, Cassay!</Text>
-        </View>
+      {/* Person Name with some greetings */}
+      <View className="mx-4 spce-y-2 mb-2">
+        <Text className="text-lg font-bold text-gray-700">Hello, User!</Text>
+      </View>
 
+      {/* category with name */}
+      <View>
+        <Text className="text-lg font-bold text-gray-700 mx-4 my-3">
+          Category
+        </Text>
+        <Categories
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
+      </View>
 
-       {/* category with name */}
-       <View>
-        <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>
-       </View>
-
-      </ScrollView>
-    </View>
+      {/* Racipes list with some description */}
+      <View>
+        <Text className="text-lg font-bold text-gray-700 mx-4 mt-8 mb-2">
+          Racipes
+        </Text>
+        <Racipes />
+      </View>
+    </SafeAreaView>
   );
 };
 

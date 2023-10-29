@@ -4,7 +4,7 @@ import { categoryData } from "../constants/data";
 
 const Categories = (props) => {
   const { activeCategory, setActiveCategory } = props;
-  console.log(activeCategory)
+
   return (
     <View>
       <ScrollView

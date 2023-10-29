@@ -30,19 +30,39 @@ export const mealData = [
         image: 'https://www.themealdb.com/images/media/meals/g373701551450225.jpg'
     },
     {
-        name: 'Beef Banh Mi Bowls with Sriracha Mayo',
+        name: 'Beef',
         image: 'https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg'
     },
     {
-        name: 'Chickpea Fajitas',
+        name: 'Chickpea',
         image: 'https://www.themealdb.com/images/media/meals/tvtxpq1511464705.jpg'
     },
     {
-        name: 'Smoky Lentil Chili with Squash',
+        name: 'Smoky ',
         image: 'https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg'
     },
     {
-        name: 'Braised Beef Chilli',
+        name: 'Braised',
+        image: 'https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg'
+    },
+    {
+        name: 'Shakshuka',
+        image: 'https://www.themealdb.com/images/media/meals/g373701551450225.jpg'
+    },
+    {
+        name: 'Beef',
+        image: 'https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg'
+    },
+    {
+        name: 'Chickpea ',
+        image: 'https://www.themealdb.com/images/media/meals/tvtxpq1511464705.jpg'
+    },
+    {
+        name: 'Smoky ',
+        image: 'https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg'
+    },
+    {
+        name: 'Braised',
         image: 'https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg'
     }
 ]
