@@ -1,10 +1,13 @@
 import { View, Text, ScrollView, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { secondaryColor } from "../../color.config";
 import { ShoppingBagIcon } from "react-native-heroicons/solid";
 import Categories from "../Components/Categories";
 
 const HomeScreen = () => {
+
+  const [activeCategory, setActiveCategory] = useState('Starter')
+  
   return (
     <View
       className="flex-1 bg-slate-300"
@@ -41,7 +44,7 @@ const HomeScreen = () => {
 
        {/* category with name */}
        <View>
-        <Categories/>
+        <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>
        </View>
 
       </ScrollView>
