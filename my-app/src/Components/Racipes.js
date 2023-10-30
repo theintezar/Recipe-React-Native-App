@@ -26,7 +26,8 @@ const Racipes = () => {
               style={{ width: 150, height: 150, resizeMode: "center" }}
               className="rounded-full res"
             />
-            <Text>{item.name}</Text>
+            <Text className='text-sm font-bold text-gray-700'>{item.name}</Text>
+            <Text className='text-xs font-medium text-gray-500'>{item.ing}</Text>
             <TouchableOpacity
               className="absolute top-2 right-2"
               onPress={() => addToCart(item)}

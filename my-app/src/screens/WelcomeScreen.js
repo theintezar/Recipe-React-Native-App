@@ -1,7 +1,7 @@
 import { View, Text, Image } from 'react-native'
 import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { primaryColor } from '../../color.config';
+import colors from '../helpers/color.config';
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
@@ -11,7 +11,7 @@ const WelcomeScreen = () => {
   }, [])
 
   return (
-    <View className="flex-1 justify-center items-center space-y-10" style={{ backgroundColor: primaryColor }}>
+    <View className="flex-1 justify-center items-center space-y-10" style={{ backgroundColor: colors.primary }}>
 
       {/* logo image with some rings */}
       <View className='bg-white/20 rounded-1 p-10'>

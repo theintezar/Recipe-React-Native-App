@@ -1,12 +1,12 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import React, { useContext, useState } from "react";
-import { secondaryColor } from "../../color.config";
 import { ShoppingBagIcon } from "react-native-heroicons/solid";
 import Categories from "../Components/Categories";
 import Racipes from "../Components/Racipes";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { CartContext } from "../Context/CartContext";
+import colors from "../helpers/color.config";
 
 const HomeScreen = () => {
   const [activeCategory, setActiveCategory] = useState("Starter");
@@ -16,7 +16,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView
       className="flex-1 bg-slate-300"
-      style={{ backgroundColor: secondaryColor, paddingBottom: 350 }}
+      style={{ backgroundColor: colors.background, paddingBottom: 350 }}
     >
       {/* Header and its contain  avatar and kart*/}
       <View className="mx-3 flex-row justify-between items-center mb-1">

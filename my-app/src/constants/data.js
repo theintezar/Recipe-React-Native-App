@@ -4,7 +4,7 @@ export const categoryData = [
         image: 'https://www.themealdb.com/images/category/starter.png'
     },
     {
-        name: 'Beef',
+        name: 'Non-Veg',
         image: 'https://themealdb.com/images/category/beef.png'
     },
     {
@@ -28,61 +28,71 @@ export const mealData = [
     {
         id: 1,
         quantity:1,
-        name: 'Shakshuka',
+        ing:"Egg, Chilli",
+        name: 'Egg Omlet',
         image: 'https://www.themealdb.com/images/media/meals/g373701551450225.jpg'
     },
     {
         id: 2,
         quantity:1,
-        name: 'Beef',
+        ing:"Chole, Rice",
+        name: 'Chole Rice',
         image: 'https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg'
     },
     {
         id: 3,
         quantity:1,
+        ing:"Chana, onion",
         name: 'Chickpea',
         image: 'https://www.themealdb.com/images/media/meals/tvtxpq1511464705.jpg'
     },
     {
         id: 4,
         quantity:1,
-        name: 'Smoky ',
+        ing:"Rajma, Curd",
+        name: 'Rajma',
         image: 'https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg'
     },
     {
         id: 5,
         quantity:1,
-        name: 'Braised',
+        ing:"Rajma, Rice",
+        name: 'Rajma Rice',
         image: 'https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg'
     },
     {
         id: 6,
         quantity:1,
-        name: 'Shakshuka',
+        ing:"Egg, Tomato",
+        name: 'Egg Masala',
         image: 'https://www.themealdb.com/images/media/meals/g373701551450225.jpg'
     },
     {
         id: 7,
         quantity:1,
-        name: 'Beef',
+        ing:"Chicken, Rice",
+        name: 'Chicken Rice',
         image: 'https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg'
     },
     {
         id: 8,
         quantity:1,
-        name: 'Chickpea ',
+        ing:"Vegitables",
+        name: 'Masala Chickpea ',
         image: 'https://www.themealdb.com/images/media/meals/tvtxpq1511464705.jpg'
     },
     {
         id: 9,
         quantity:1,
-        name: 'Smoky ',
+        ing:"Chola, Curd",
+        name: 'Chola Special ',
         image: 'https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg'
     },
     {
         id:10,
         quantity:1,
-        name: 'Braised',
+        ing:"Rice, Rajma",
+        name: 'Rajma Special',
         image: 'https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg'
     }
 ]
