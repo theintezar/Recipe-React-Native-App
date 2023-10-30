@@ -36,12 +36,14 @@ const CartScreen = () => {
         <ArrowLeftIcon size={25} color={"white"} />
       </TouchableOpacity>
 
+      {/* Title */}
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex-row justify-center items-center gap-2 mt-3">
           <ShoppingCartIcon size={45} color={colors.primary} />
           <Text className="text-4xl font-bold text-gray-700">My Cart</Text>
         </View>
 
+        {/* Show Cart item */}
         {cartState.items.map((item, index) => (
           <View className="flex justify-center items-center mt-3" key={index}>
             <View
