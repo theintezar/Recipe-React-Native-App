@@ -7,7 +7,6 @@ import { CartContext } from "../Context/CartContext";
 
 const Racipes = () => {
   const { cartState, dispatch } = useContext(CartContext);
-  
 
   const addToCart = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
@@ -18,24 +17,31 @@ const Racipes = () => {
       <FlatList
         data={mealData}
         renderItem={({ item }) => {
-          const isItemInCart = cartState.items.some((cartItem) => cartItem.id === item.id);
-        return(
-          <View className="bg-white items-center mx-3 my-3 py-3 px-3 rounded-lg">
-            <Image
-              source={{ uri: item.image }}
-              style={{ width: 150, height: 150, resizeMode: "center" }}
-              className="rounded-full res"
-            />
-            <Text className='text-sm font-bold text-gray-700'>{item.name}</Text>
-            <Text className='text-xs font-medium text-gray-500'>{item.ing}</Text>
-            <TouchableOpacity
-              className="absolute top-2 right-2"
-              onPress={() => addToCart(item)}
-            >
-              <HeartSolid size={25} color={isItemInCart?"red":"black"} />
-            </TouchableOpacity>
-          </View>
-        )}}
+          const isItemInCart = cartState.items.some(
+            (cartItem) => cartItem.id === item.id
+          );
+          return (
+            <View className="bg-white items-center mx-3 my-3 py-3 px-3 rounded-lg">
+              <Image
+                source={{ uri: item.image }}
+                style={{ width: 150, height: 150, resizeMode: "center" }}
+                className="rounded-full res"
+              />
+              <Text className="text-sm font-bold text-gray-700">
+                {item.name}
+              </Text>
+              <Text className="text-xs font-medium text-gray-500">
+                {item.ing}
+              </Text>
+              <TouchableOpacity
+                className="absolute top-2 right-2"
+                onPress={() => addToCart(item)}
+              >
+                <HeartSolid size={25} color={isItemInCart ? "red" : "black"} />
+              </TouchableOpacity>
+            </View>
+          );
+        }}
         numColumns={2}
         columnWrapperStyle={{ justifyContent: "space-between" }}
         showsVerticalScrollIndicator={false}

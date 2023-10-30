@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useContext, useState } from "react";
 import { ShoppingBagIcon } from "react-native-heroicons/solid";
 import Categories from "../Components/Categories";
@@ -30,11 +30,15 @@ const HomeScreen = () => {
             borderRadius: 50,
           }}
         />
-        <TouchableOpacity onPress={()=>{navigation.navigate('Cart')}}>
-        <ShoppingBagIcon size={40} color="black" />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Cart");
+          }}
+        >
+          <ShoppingBagIcon size={40} color="black" />
         </TouchableOpacity>
         <Text className="absolute top-0 right-0 bg-red-700 rounded-full text-xs font-bold w-4 text-center">
-          {cartState?cartState.items.length:0}
+          {cartState ? cartState.items.length : 0}
         </Text>
       </View>
 

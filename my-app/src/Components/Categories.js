@@ -22,7 +22,7 @@ const Categories = (props) => {
               className="flex items-center space-y-1"
               onPress={() => setActiveCategory(cat.name)}
             >
-              <View className={"rounded-full p-1 "+ activeClassBtn}>
+              <View className={"rounded-full p-1 " + activeClassBtn}>
                 <Image
                   source={{ uri: cat.image }}
                   style={{ width: 60, height: 60 }}
