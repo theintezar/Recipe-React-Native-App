@@ -12,7 +12,7 @@ const initialCartState = {
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      // Check if the item is already in the cart
+      // Check if the item is already in the cart     
       const existingItem = state.items.find(
         (item) => item.id === action.payload.id
       );
@@ -40,7 +40,7 @@ const cartReducer = (state, action) => {
         ...state,
         items: state.items.filter((item) => item.id !== action.payload),
       };
-      
+
     case "INCREMENT_ITEM":
       // Increment the quantity of an item in the cart
       return {

@@ -1,15 +1,25 @@
-import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import React, { useContext } from "react";
-import { mealData } from "../constants/data";
+import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import { HeartIcon } from "react-native-heroicons/outline";
 import { HeartIcon as HeartSolid } from "react-native-heroicons/solid";
 import { CartContext } from "../Context/CartContext";
+import { mealData } from "../constants/data";
 
 const Racipes = () => {
   const { cartState, dispatch } = useContext(CartContext);
 
-  const addToCart = (product) => {
-    dispatch({ type: "ADD_TO_CART", payload: product });
+  const toggleCartItem = (product) => {
+    // Check if the item is already in the cart
+    const isItemInCart = cartState.items.some(
+      (cartItem) => cartItem.id === product.id
+    );
+    if (isItemInCart) {
+      // If it's in the cart, remove it
+      dispatch({ type: "REMOVE_FROM_CART", payload: product.id });
+    } else {
+      // If it's not in the cart, add it
+      dispatch({ type: "ADD_TO_CART", payload: product });
+    }
   };
 
   return (
@@ -20,6 +30,7 @@ const Racipes = () => {
           const isItemInCart = cartState.items.some(
             (cartItem) => cartItem.id === item.id
           );
+
           return (
             <View className="bg-white items-center mx-3 my-3 py-3 px-3 rounded-lg">
               <Image
@@ -35,7 +46,7 @@ const Racipes = () => {
               </Text>
               <TouchableOpacity
                 className="absolute top-2 right-2"
-                onPress={() => addToCart(item)}
+                onPress={() => toggleCartItem(item)}
               >
                 <HeartSolid size={25} color={isItemInCart ? "red" : "black"} />
               </TouchableOpacity>
@@ -51,3 +62,4 @@ const Racipes = () => {
 };
 
 export default Racipes;
+

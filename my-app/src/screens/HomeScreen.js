@@ -10,6 +10,7 @@ import colors from "../helpers/color.config";
 
 const HomeScreen = () => {
   const [activeCategory, setActiveCategory] = useState("Starter");
+
   const navigation = useNavigation();
   const { cartState } = useContext(CartContext);
 
