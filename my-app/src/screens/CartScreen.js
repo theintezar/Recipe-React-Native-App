@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import {
   View,
   Text,
-  Button,
   Image,
   TouchableOpacity,
   ScrollView,
@@ -18,6 +17,7 @@ import {
 } from "react-native-heroicons/solid";
 import colors from "../helpers/color.config";
 import { useNavigation } from "@react-navigation/native";
+
 
 const CartScreen = () => {
   const { cartState, dispatch } = useContext(CartContext);

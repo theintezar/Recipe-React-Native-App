@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import { HeartIcon } from "react-native-heroicons/outline";
 import { HeartIcon as HeartSolid } from "react-native-heroicons/solid";
 import { CartContext } from "../Context/CartContext";
 import { mealData } from "../constants/data";
 
-const Racipes = () => {
+const Racipes = (searchData) => {
   const { cartState, dispatch } = useContext(CartContext);
 
   const toggleCartItem = (product) => {
@@ -25,7 +25,7 @@ const Racipes = () => {
   return (
     <View className="pb-3">
       <FlatList
-        data={mealData}
+        data={searchData.searchData}
         renderItem={({ item }) => {
           const isItemInCart = cartState.items.some(
             (cartItem) => cartItem.id === item.id
@@ -43,6 +43,12 @@ const Racipes = () => {
               </Text>
               <Text className="text-xs font-medium text-gray-500">
                 {item.ing}
+              </Text>
+              <Text className="text-xs font-medium text-gray-500">
+                {item.isVegetarian?"Veg":"Non-Veg"}
+              </Text>
+              <Text className="text-xs font-medium text-gray-500">
+                {item.price}₹
               </Text>
               <TouchableOpacity
                 className="absolute top-2 right-2"
@@ -62,4 +68,3 @@ const Racipes = () => {
 };
 
 export default Racipes;
-
