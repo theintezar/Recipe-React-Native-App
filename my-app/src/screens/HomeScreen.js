@@ -26,7 +26,7 @@ const HomeScreen = () => {
   useEffect(() => {
     const filteredMeals = mealData.filter((meal) => {
       const inPriceRange = meal.price >= priceRange[0] && meal.price <= priceRange[1];
-      const isFilteredByVegetarian = isVegetarian ? meal.isVegetarian : true ;
+      const isFilteredByVegetarian = isVegetarian ? meal.isVegetarian : true;
       const matchesSearchQuery = meal.name.toLowerCase().includes(searchQuery.toLowerCase());
 
       return inPriceRange && isFilteredByVegetarian && matchesSearchQuery;
